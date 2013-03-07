@@ -1,0 +1,12 @@
+Hello from inside the WebView<br/>
+<div id="jsmessage"></div>
+<div id="clicky">Click Here to take a photo</div>
+
+<script type="text/javascript">
+document.getElementById("jsmessage").innerHTML = "Javascript is enabled :)<br/>";
+document.getElementById("clicky").onclick=function() {
+	document.getElementById("clicky").innerHTML = "clicked.\n";
+	jsObject.sayHello();
+	jsObject.takePhoto();
+}
+</script>
