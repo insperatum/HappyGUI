@@ -1,12 +1,19 @@
-Hello from inside the WebView<br/>
+<html>
+<head>
+<script type="text/javascript">
+jsObject.log("Hello from javascript!");
+function addImage(src) {
+	document.body.innerHTML += "<br/><img src='" + src + "' width='200px'/>";
+}
+</script>
+</head>
+<body>
 <div id="jsmessage"></div>
-<div id="clicky">Click Here to take a photo</div>
+<button type="button" onclick="jsObject.takePhoto()">Take a Photo!</button>
+</body>
+</html>
+
 
 <script type="text/javascript">
 document.getElementById("jsmessage").innerHTML = "Javascript is enabled :)<br/>";
-document.getElementById("clicky").onclick=function() {
-	document.getElementById("clicky").innerHTML = "clicked.\n";
-	jsObject.sayHello();
-	jsObject.takePhoto();
-}
 </script>
