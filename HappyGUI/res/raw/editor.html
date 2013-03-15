@@ -1,19 +1,53 @@
+<!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript">
-jsObject.log("Hello from javascript!");
-function addImage(src) {
-	document.body.innerHTML += "<br/><img src='" + src + "' width='200px'/>";
-}
-</script>
+  <title>HappyGUI</title>
+  <link rel="stylesheet" type="text/css" href="css/default.css" />
 </head>
 <body>
-<div id="jsmessage"></div>
-<button type="button" onclick="jsObject.takePhoto()">Take a Photo!</button>
+<div class="wrapper">
+  <div id="editor">
+    <a href="#start">Go</a>
+    <!-- editorViews will be imported here -->
+  </div>
+
+  <div id="preview">
+    <!-- elements drawn by the user -->
+  </div>
+</div>
+
+<script type="text/javascript" src="build/build.js"></script>
+<script type="text/javascript">
+  var Router = require('apily-router');
+
+
+  // r is handler for routing
+  var r = {
+    homepage: function() {
+      console.log("YUHU WE ARE IN HOMEPAGE");
+    },
+    newpage: function() {},
+    editor: function() {},
+    help: function() {},
+    collection: function() {},
+    element_editor: function(type) {}
+  };
+
+  // router is the app route
+  var router = new Router()
+    .route('#homepage', r.homepage)
+    .route('#new', r.newpage)
+    .route('#editor', r.editor)
+    .route("#help", r.help)
+    .route("#collection", r.collection)
+    .route('#editor/:type', r.element_editor);
+
+  // starting history
+  router.history.start();
+
+  // set the page on #homepage onload
+  window.location = "#homepage";
+
+</script>
 </body>
 </html>
-
-
-<script type="text/javascript">
-document.getElementById("jsmessage").innerHTML = "Javascript is enabled :)<br/>";
-</script>

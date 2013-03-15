@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "apily/router": "*",
+    "apily/history": "*"
+  }
+}

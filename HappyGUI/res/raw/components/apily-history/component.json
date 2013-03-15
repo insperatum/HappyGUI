@@ -1,0 +1,21 @@
+{
+  "name": "history",
+  "repo": "apily/history",
+  "version": "0.0.1",
+  "description": "History component",
+  "keywords": [
+    "history",
+    "onhashchange",
+    "popstate"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "dependencies": {
+    "apily/emitter": "*"
+  },
+  "development": {
+    "component/assert": "*"
+  },
+  "license": "MIT"
+}
